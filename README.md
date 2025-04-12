@@ -17,9 +17,8 @@ Capturas de telas do código:
 - 
 ![captura-4](https://github.com/user-attachments/assets/b8b45bd7-53dc-4503-a103-71d0c7b5afec)
 ![captura-3](https://github.com/user-attachments/assets/62439039-c32b-4174-947b-0140f6b15bc3)
-![captura-2](https://github.com/user-attachments/assets/231d2abd-3e33-4bc7-ad26-870c63b30c21)
 ![captura-1](https://github.com/user-attachments/assets/cecaf467-d994-4f4e-9679-587f8fb910a7)
-
+![captura-2](https://github.com/user-attachments/assets/231d2abd-3e33-4bc7-ad26-870c63b30c21)
 
 Lista de bibliotecas utilizadas: 
 -
