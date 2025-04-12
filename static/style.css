@@ -43,6 +43,10 @@ thead, th{
     color:var(--cor-terciaria);
 }
 
+a:hover{
+    cursor: pointer;
+}
+
 .header{
     display: flex;
     align-items: center;
@@ -103,6 +107,10 @@ thead, th{
     border-radius: 5px;
     font-size: 1.2rem;
     text-decoration: none;
+}
+
+.button:hover{
+    cursor: pointer;
 }
 
 .bottom{
