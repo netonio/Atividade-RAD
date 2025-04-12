@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estoque</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}">
+</head>
+<body>
+    <section class="content">
+        <div class="box">
+            <h1>Lista de Produtos</h1>
+
+            <div class="header">
+                <form action="/pesquisar" method="GET" class="search-field">
+                    <input type="text" name="pesquisa" placeholder="Pesquise por nome ou id" class="input-field" style="width: 75%;">
+                    <button type="submit" class="button" style="width: 15%;">Buscar</button>
+                </form>
+            </div>
+
+            <div class="box-list">
+                {% if produtos %}
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Nome</th>
+                                <th>Preço</th>
+                                <th>Quantidade</th>
+                                <th colspan="2">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                {% for produto in produtos %}
+                                    <tr>
+                                        <td>{{produto.id}}</td>
+                                        <td>{{produto.nome}}</td>
+                                        <td>R${{ "%.2f" | format(produto.preco) | replace('.', ',') }}</td>
+                                        <td>{{produto.quantidade}}</td>
+                                        <td><a class="button" href="/editar/{{produto.id}}">Editar</a></td>
+                                        <td><a class="button" href="/remover/{{produto.id}}">Remover</a></td>
+                                    </tr>
+                                {% endfor %}
+                            
+                        </tbody>
+                    </table>
+                {% else %}
+                    <p>Nenhum produto encontrado</p>
+                {% endif %}
+            </div>
+            <div class="group-buttons">
+                <a class="button bottom" href="/adicionar">Adicionar</a> 
+                <a class="button bottom" href="{{ url_for('homepage') }}" style="margin-right: 5px;">Voltar</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
