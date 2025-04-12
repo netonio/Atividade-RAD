@@ -70,14 +70,14 @@ def pesquisar():
    pesquisa = request.args.get("pesquisa")
 
    if not pesquisa:
-      return render_template("homepage.html", produtos=[])
+      return render_template("homepage.html", produtos=[], pesquisa="")
    
    if pesquisa.isdigit():
       produto = buscar_produto_id(int(pesquisa))
-      return render_template("homepage.html", produtos=[produto] if produto else [])
+      return render_template("homepage.html", produtos=[produto] if produto else [], pesquisa=pesquisa)
    else:
       produtos = buscar_produto_nome(pesquisa)
-      return render_template("homepage.html", produtos=produtos)
+      return render_template("homepage.html", produtos=produtos, pesquisa=pesquisa)
 
 if __name__ == "__main__":
    with app.app_context():
